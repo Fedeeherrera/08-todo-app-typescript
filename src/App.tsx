@@ -9,10 +9,16 @@ const mockTodos = [
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState(mockTodos)
+
+  const handleRemove = (id) : void => {
+    const newTodos = todos.filter((todo) => todo.id !== id)
+    setTodos(newTodos)
+  }
+
   return (
     <div className="todoapp">
       <h1>Todo APP</h1>
-      <Todos todos={todos} />
+      <Todos todos={todos} onRemoveTodo={handleRemove} />
     </div>
   )
 }
