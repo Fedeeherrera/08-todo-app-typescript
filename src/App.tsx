@@ -10,7 +10,7 @@ const mockTodos = [
 const App: React.FC = () => {
   const [todos, setTodos] = useState(mockTodos)
 
-  const handleRemove = (id) : void => {
+  const handleRemove = (id : string) : void => {
     const newTodos = todos.filter((todo) => todo.id !== id)
     setTodos(newTodos)
   }
